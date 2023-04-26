@@ -82,13 +82,26 @@ void triangle(const int x, const int y, int matrix[][M])
                     }
                 }
             }
-
-            if (i > p) // заполнение матрицы после прохождения треуголника по i
+            if (EvenNotEven(x) == 1)
             {
-                std::cout << std::endl;
-                for (int j = 0; j < x; j++)
+                if (i > p ) // заполнение матрицы после прохождения треуголника по i
                 {
-                    std::cout << matrix[i][j] << "\t";
+                    std::cout << std::endl;
+                    for (int j = 0; j < x; j++)
+                    {
+                        std::cout << matrix[i][j] << "\t";
+                    }
+                }
+            }
+            else
+            {
+                if (i >= p) // заполнение матрицы после прохождения треуголника по i
+                {
+                    std::cout << std::endl;
+                    for (int j = 0; j < x; j++)
+                    {
+                        std::cout << matrix[i][j] << "\t";
+                    }
                 }
             }
             b--;
@@ -107,7 +120,7 @@ int main() //i cols, j rows
 {
 
     int matrix[M][N];
-    int x = 9, y = 9;
+    int x = 5, y = 5;
     for (int i = 0; i < x; i++)
     {
         for (int j = 0; j < y; j++)
@@ -125,5 +138,4 @@ int main() //i cols, j rows
         std::cout << std::endl;
     }
     triangle(x, y, matrix);
-
 }
